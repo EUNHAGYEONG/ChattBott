@@ -222,8 +222,8 @@ def answer(request):
         
         headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
         r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
-
-       
+        
+        data = json.loads(r.text)
 
         return JsonResponse({
             'message': {
