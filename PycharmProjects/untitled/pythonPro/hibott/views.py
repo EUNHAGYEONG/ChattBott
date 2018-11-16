@@ -10,6 +10,7 @@ global county
 county = '0'
 global village
 village = '0'
+global params
 
 params = {"version": "2", "city": city, "county": county, "village": village}  # 딕셔너리 형식 - 사용하기 편리하다.
 
