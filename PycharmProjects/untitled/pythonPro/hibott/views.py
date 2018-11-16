@@ -221,7 +221,9 @@ def answer(request):
         VILLAGE = Local_name
         
         headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
+        r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
 
+       
 
         return JsonResponse({
             'message': {
