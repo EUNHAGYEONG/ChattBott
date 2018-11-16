@@ -30,8 +30,13 @@ def answer(request):
     Local_name = received_json_data['content']
     Date_now = datetime.date.now().strftime("%m월 %d일")
 
-    global params, headers, CITY, COUNTY, VILLAGE, section
-
+       global params
+    global headers
+    global CITY
+    global COUNTY
+    global VILLAGE
+    global section
+    
     if Local_name == "지역 선택":
 
         return JsonResponse({
