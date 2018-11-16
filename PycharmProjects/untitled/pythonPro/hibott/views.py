@@ -6,13 +6,6 @@ import datetime
 import json
 import requests
 
-global params
-global headers
-global CITY
-global COUNTY
-global VILLAGE
-global section
-
 section = '0'
 CITY = '0'
 COUNTY = '0'
@@ -26,7 +19,7 @@ def keyboard(request):
 
     return JsonResponse({
         "type": "buttons",
-        "buttons": ['지역 선택']
+        "buttons": ['지역선택']
     })
 
 @csrf_exempt
@@ -38,7 +31,7 @@ def answer(request):
     Date_now = datetime.date.now().strftime("%m월 %d일")
 
     
-    if Local_name == "지역 선택":
+    if Local_name == "지역선택":
 
         return JsonResponse({
             'message': {
