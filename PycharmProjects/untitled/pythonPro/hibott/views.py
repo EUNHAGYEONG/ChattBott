@@ -16,7 +16,7 @@ def keyboard(request):
 
     return JsonResponse({
         "type": "buttons",
-        "buttons": ["지역 선택"]
+        "buttons": ['지역 선택']
     })
 
 @csrf_exempt
@@ -197,6 +197,7 @@ def answer(request):
         data = json.loads(r.text)
         weather = data["weather"]["minutely"]
         cTime = weather[0]["temperature"]["tc"]
+        VILLAGE = Local_name
 
         return JsonResponse({
             'message' : {
