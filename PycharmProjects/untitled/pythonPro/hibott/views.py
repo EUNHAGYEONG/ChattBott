@@ -46,7 +46,7 @@ def answer(request):
         })
 
     elif Local_name == "인천":
-        city = Local_name
+        params['city'] = Local_name
 
         return JsonResponse({
             'message': {
@@ -59,7 +59,7 @@ def answer(request):
         })
 
     elif Local_name == "중구":
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -79,7 +79,7 @@ def answer(request):
         })
 
     elif Local_name == "동구":
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -95,7 +95,7 @@ def answer(request):
         })
 
     elif Local_name == "미추홀구":
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -111,7 +111,7 @@ def answer(request):
         })
 
     elif Local_name == "연수구":
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -126,7 +126,7 @@ def answer(request):
         })
 
     elif Local_name == "남동구":
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -142,7 +142,7 @@ def answer(request):
         })
 
     elif Local_name == '부평구':
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -158,7 +158,7 @@ def answer(request):
         })
 
     elif Local_name == '계양구':
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -175,7 +175,7 @@ def answer(request):
         })
 
     elif Local_name == '서구':
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -194,7 +194,7 @@ def answer(request):
         })
 
     elif Local_name == '강화군':
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -208,7 +208,7 @@ def answer(request):
         })
 
     elif Local_name == '옹진군':
-        county = Local_name
+        params['county'] = Local_name
         section = "Final"
 
         return JsonResponse({
@@ -222,7 +222,7 @@ def answer(request):
         })
 
     elif section == "Final":
-        village = Local_name
+        params['village'] = Local_name
         
         headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
         r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
@@ -232,7 +232,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': params['city'] + params['county'] + params['village']+city+county+village
+                'text': params['city'] + params['county'] + params['village']
             },
             'keyboard': {
                 'type': 'buttons',
