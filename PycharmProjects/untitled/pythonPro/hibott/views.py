@@ -4,6 +4,11 @@ from django.http import JsonResponse
 import json
 import requests
 
+global section
+global city
+global county
+global village
+
 params = {"version": "2", "city": city, "county": county, "village": village}  # 딕셔너리 형식 - 사용하기 편리하다.
 
 def keyboard(request):
@@ -19,10 +24,7 @@ def answer(request):
     received_json_data = json.loads(json_str)
     Local_name = received_json_data['content']
     
-    global section
-    global city
-    global county
-    global village
+   
 
     if Local_name == '지역선택':
 
