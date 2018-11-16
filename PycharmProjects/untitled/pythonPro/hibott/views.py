@@ -223,7 +223,8 @@ def answer(request):
         })
 
     elif section == "Final":
-
+        VILLAGE = Local_name
+        
         return JsonResponse({
             'message': {
                 'text': CITY + COUNTY + VILLAGE + "다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
