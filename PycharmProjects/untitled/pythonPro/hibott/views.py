@@ -228,9 +228,12 @@ def answer(request):
         cTime = weather[0]["temperature"]["tc"]
         VILLAGE = Local_name
 
-        return JsonResponse({
+           return JsonResponse({
             'message': {
                 'text': CITY + COUNTY + VILLAGE + "의 기온은" + cTime + "입니다.\n다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
             },
-            'type': 'buttons',
-            'buttons': ['인천']
+            'keyboard' : {
+                'type': 'buttons',
+                'buttons': ['인천']
+            }
+        })
