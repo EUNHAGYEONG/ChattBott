@@ -229,7 +229,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': weather
+                'text': CITY
             },
             'keyboard': {
                 'type': 'buttons',
