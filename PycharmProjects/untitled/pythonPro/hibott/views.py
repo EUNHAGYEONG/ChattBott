@@ -12,9 +12,6 @@ COUNTY = '0'
 VILLAGE = '0'
 
 params = {"version": "2", "city": CITY, "county": COUNTY, "village": VILLAGE}  # 딕셔너리 형식 - 사용하기 편리하다.
-headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
-r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
-
 
 def keyboard(request):
     return JsonResponse({
@@ -224,6 +221,10 @@ def answer(request):
 
     elif section == "Final":
         VILLAGE = Local_name
+        
+        headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
+        r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
+
         data = json.loads(r.text)
         weather = data["weather"]["minutely"]
         cTime = weather[0]["temperature"]["tc"]
