@@ -6,6 +6,13 @@ import datetime
 import json
 import requests
 
+global params
+global headers
+global CITY
+global COUNTY
+global VILLAGE
+global section
+
 section = '0'
 CITY = '0'
 COUNTY = '0'
@@ -30,12 +37,6 @@ def answer(request):
     Local_name = received_json_data['content']
     Date_now = datetime.date.now().strftime("%m월 %d일")
 
-    global params
-    global headers
-    global CITY
-    global COUNTY
-    global VILLAGE
-    global section
     
     if Local_name == "지역 선택":
 
