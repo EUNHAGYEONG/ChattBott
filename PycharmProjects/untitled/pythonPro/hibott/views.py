@@ -28,14 +28,13 @@ def answer(request):
     json_str = ((request.body).decode('utf-8'))
     received_json_data = json.loads(json_str)
     Local_name = received_json_data['content']
-    Date_now = datetime.date.now().strftime("%m월 %d일")
 
     
-    if Local_name == "지역선택":
+    if Local_name == '지역선택':
 
         return JsonResponse({
             'message': {
-                'text': "지역을 선택해주세요"
+                'text': '지역을 선택해주세요'
             },
             'keyboard': {
                 'type': 'buttons',
@@ -43,7 +42,7 @@ def answer(request):
             }
         })
 
-    if Local_name == "인천":
+    elif Local_name == "인천":
         CITY = Local_name
 
         return JsonResponse({
@@ -56,7 +55,7 @@ def answer(request):
             }
         })
 
-    if Local_name == "중구":
+    elif Local_name == "중구":
         COUNTY = Local_name
         section = "Final"
 
@@ -75,7 +74,7 @@ def answer(request):
             }
         })
 
-    if Local_name == '동구':
+    elif Local_name == '동구':
         COUNTY = Local_name
         section = "Final"
 
@@ -88,7 +87,7 @@ def answer(request):
                          '송림3.5동', '송림4동', '송림6동', '금창동']
         })
 
-    if Local_name == '미추홀구':
+    elif Local_name == '미추홀구':
         COUNTY = Local_name
         section = "Final"
 
@@ -102,7 +101,7 @@ def answer(request):
                          '주안1동', '주안2동', '주안3동', '주안4동', '주안5동', '주안6동', '주안7동', '주안8동']
         })
 
-    if Local_name == '연수구':
+    elif Local_name == '연수구':
         COUNTY = Local_name
         section = "Final"
 
@@ -115,7 +114,7 @@ def answer(request):
                          '연수3동', '동춘1동', '동춘2동', '동춘3동', '송도1동', '송도2동', '송도3동']
         })
 
-    if Local_name == '남동구':
+    elif Local_name == '남동구':
         COUNTY = Local_name
         section = "Final"
 
@@ -129,7 +128,7 @@ def answer(request):
                          '만수3동', '만수4동', '만수5동', '만수6동', '장수서창동', '남촌도림동', '논현1동', '논현2동', '논현고잔동']
         })
 
-    if Local_name == '부평구':
+    elif Local_name == '부평구':
         COUNTY = Local_name
         section = "Final"
 
@@ -143,7 +142,7 @@ def answer(request):
                          '삼산1동', '삼산2동', '부개1동', '부개2동', '부개3동', '십정1동', '십정2동']
         })
 
-    if Local_name == '계양구':
+    elif Local_name == '계양구':
         COUNTY = Local_name
         section = "Final"
 
@@ -157,7 +156,7 @@ def answer(request):
                          '계산2동', '계산3동', '계산4동', '작전1동', '작전2동', '작전서운동', '계양1동', '계양2동', '계양3동']
         })
 
-    if Local_name == '서구':
+    elif Local_name == '서구':
         COUNTY = Local_name
         section = "Final"
 
@@ -171,7 +170,7 @@ def answer(request):
                          '가정3동', '석남1동', '석남2동', '석남3동', '신현원창동', '가좌1동', '가좌2동', '가좌3동', '가좌4동', '검단동', '불로대곡동', '오류왕길동']
         })
 
-    if Local_name == '강화군':
+    elif Local_name == '강화군':
         COUNTY = Local_name
         section = "Final"
 
@@ -183,7 +182,7 @@ def answer(request):
             'buttons' : ['강화읍', '선원면', '불은면', '길상면', '화도면', '양도면', '내가면', '하점면', '양사면', '송해면', '교동면', '삼산면', '서도면']
         })
 
-    if Local_name == '옹진군':
+    elif Local_name == '옹진군':
         COUNTY = Local_name
         section = "Final"
 
@@ -195,7 +194,7 @@ def answer(request):
             'buttons' : ['북도면', '백령면', '대청면', '덕적면', '영흥면', '자월면', '연평면']
         })
 
-    if section == "Final":
+    elif section == "Final":
         data = json.loads(r.text)
         weather = data["weather"]["minutely"]
         cTime = weather[0]["temperature"]["tc"]
