@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
-import datetime
-import json
 import requests
 
 section = '0'
@@ -30,8 +28,6 @@ def answer(request):
     global CITY
     global COUNTY
     global VILLAGE
-    global params
-    global headers
 
     if Local_name == '지역선택':
 
@@ -225,15 +221,11 @@ def answer(request):
         VILLAGE = Local_name
         
         headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
-        r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
 
-        data = json.loads(r.text)
-        weather = data["weather"]["minutely"]
-        cTime = weather[0]["temperature"]["tc"]
 
         return JsonResponse({
             'message': {
-                'text': cTime
+                'text': CITY
             },
             'keyboard': {
                 'type': 'buttons',
