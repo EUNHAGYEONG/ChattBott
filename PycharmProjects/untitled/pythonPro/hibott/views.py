@@ -232,7 +232,7 @@ def answer(request):
             'message': {
                 'text': CITY + COUNTY + VILLAGE + "의 기온은" + cTime + "입니다.\n다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
             },
-            'keyboard' : {
+            'keyboard': {
                 'type': 'buttons',
                 'buttons': ['인천']
             }
