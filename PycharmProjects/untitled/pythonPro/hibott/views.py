@@ -4,11 +4,6 @@ from django.http import JsonResponse
 import json
 import requests
 
-section = '0'
-city = '0'
-county = '0'
-village = '0'
-
 params = {"version": "2", "city": city, "county": county, "village": village}  # 딕셔너리 형식 - 사용하기 편리하다.
 
 def keyboard(request):
@@ -228,7 +223,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': params['city'] + params['county'] + params['village']
+                'text': params['city'] + params['county'] + params['village']+city+county+village
             },
             'keyboard': {
                 'type': 'buttons',
