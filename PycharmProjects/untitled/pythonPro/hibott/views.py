@@ -226,7 +226,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text':"다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
+                'text': CITY + COUNTY + VILLAGE + "다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
             },
             'keyboard': {
                 'type': 'buttons',
