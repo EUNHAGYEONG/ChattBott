@@ -30,6 +30,8 @@ def answer(request):
     global CITY
     global COUNTY
     global VILLAGE
+    global params
+    global headers
 
     if Local_name == '지역선택':
 
@@ -231,7 +233,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': params
+                'text': cTime
             },
             'keyboard': {
                 'type': 'buttons',
