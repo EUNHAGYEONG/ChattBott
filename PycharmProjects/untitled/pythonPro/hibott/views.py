@@ -27,11 +27,7 @@ def answer(request):
     received_json_data = json.loads(json_str)
     Local_name = received_json_data['content']
     
-    global section
-    global city
-    global county
-    global village
-    global params
+    global sectio
 
     if Local_name == '지역선택':
 
