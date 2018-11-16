@@ -225,6 +225,7 @@ def answer(request):
         
         data = json.loads(r.text)
         weather = data.get('weather')
+        minutely= weather.get('minutely')
        
 
         return JsonResponse({
