@@ -224,10 +224,12 @@ def answer(request):
         r = requests.get("https://api2.sktelecom.com/weather/current/minutely", params=params, headers=headers)
         
         data = json.loads(r.text)
+        weather = data["weather"]["minutely"]
+       
 
         return JsonResponse({
             'message': {
-                'text': CITY
+                'text': weather
             },
             'keyboard': {
                 'type': 'buttons',
