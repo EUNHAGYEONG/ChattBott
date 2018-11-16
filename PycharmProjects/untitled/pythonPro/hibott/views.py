@@ -7,6 +7,9 @@ import json
 import requests
 
 section = '0'
+city = '0'
+county = '0'
+village = '0'
 
 params = {"version": "2", "city":CITY, "county":COUNTY,"village":VILLAGE} #딕셔너리 형식 - 사용하기 편리하다.
 headers = {"appKey": "fb15a052-28f1-437b-88b7-eccf830c4fa1"}
