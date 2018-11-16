@@ -233,7 +233,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': params['city'] + params['county'] + params['village'] + tmp
+                'text': params['city'] + ' ' + params['county'] + ' ' + params['village'] + '의 온도는' +  tmp + '입니다\n 다른 지역의 온도를 알고 싶으면 지역을 선택하세요!'
             },
             'keyboard': {
                 'type': 'buttons',
