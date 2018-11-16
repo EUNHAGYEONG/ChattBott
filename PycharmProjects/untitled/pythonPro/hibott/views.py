@@ -224,10 +224,13 @@ def answer(request):
 
     elif section == "Final":
         VILLAGE = Local_name
-        
+        data = json.loads(r.text)
+        weather = data["weather"]["minutely"]
+        cTime = weather[0]["temperature"]["tc"]
+
         return JsonResponse({
             'message': {
-                'text': CITY + COUNTY + VILLAGE + "다른 지역을 확인하고 싶으시면 버튼을 눌러주세요!"
+                'text': cTime
             },
             'keyboard': {
                 'type': 'buttons',
