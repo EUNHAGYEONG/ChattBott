@@ -74,7 +74,7 @@ def answer(request):
             }
         })
 
-    elif Local_name == '동구':
+    elif Local_name == "동구":
         COUNTY = Local_name
         section = "Final"
 
@@ -87,7 +87,7 @@ def answer(request):
                          '송림3.5동', '송림4동', '송림6동', '금창동']
         })
 
-    elif Local_name == '미추홀구':
+    elif Local_name == "미추홀구":
         COUNTY = Local_name
         section = "Final"
 
@@ -101,7 +101,7 @@ def answer(request):
                          '주안1동', '주안2동', '주안3동', '주안4동', '주안5동', '주안6동', '주안7동', '주안8동']
         })
 
-    elif Local_name == '연수구':
+    elif Local_name == "연수구":
         COUNTY = Local_name
         section = "Final"
 
@@ -114,7 +114,7 @@ def answer(request):
                          '연수3동', '동춘1동', '동춘2동', '동춘3동', '송도1동', '송도2동', '송도3동']
         })
 
-    elif Local_name == '남동구':
+    elif Local_name == "남동구":
         COUNTY = Local_name
         section = "Final"
 
