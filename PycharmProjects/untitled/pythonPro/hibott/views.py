@@ -27,7 +27,7 @@ def answer(request):
     received_json_data = json.loads(json_str)
     Local_name = received_json_data['content']
     
-    global sectio
+    global section
 
     if Local_name == '지역선택':
 
