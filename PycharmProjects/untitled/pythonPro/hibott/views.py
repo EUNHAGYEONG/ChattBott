@@ -231,7 +231,7 @@ def answer(request):
 
         return JsonResponse({
             'message': {
-                'text': cTime
+                'text': params
             },
             'keyboard': {
                 'type': 'buttons',
