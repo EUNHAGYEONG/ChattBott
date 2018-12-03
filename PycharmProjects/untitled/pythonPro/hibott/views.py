@@ -226,19 +226,19 @@ def answer(request):
         data = json.loads(r.text)
         tmp = data['weather']['minutely'][0]['temperature']['tc']
         
-        if 'tc' >= 27:
+        if tmp >= 27:
             cloth = "나시티, 반바지, 민소매 원피스를 추천해드립니다!"
-        elif 23<='tc'<=26:
+        elif 23<=tmp<=26:
             cloth = "반팔, 얇은 셔츠, 얇은 긴팔, 반바지, 면바지를 추천해드립니다!"
-        elif 20<='tc'<=22:
+        elif 20<=tmp<=22:
             cloth = "긴팔티, 가디건, 후드티, 면바지, 슬랙스, 스키니를 추천해드립니다!"
-        elif 17<='tc'<=19:
+        elif 17<=tmp<=19:
             cloth = "니트, 가디건, 후드티, 맨투맨, 청바지, 면바지, 슬랙스, 원피스를 추천해드립니다!"
-        elif 12<='tc'<=16:
+        elif 12<=tmp<=16:
             cloth = "자켓, 셔츠, 가디건, 간절기 야상, 살색스타킹을 추천해드립니다!"
-        elif 10<='tc'<11:
+        elif 10<=tmp<11:
             cloth = "트랜치코트, 간절기 야상, 여러겹 껴입기를 추천해드립니다!"
-        elif 6<='tc'<=9:
+        elif 6<=tmp<=9:
             cloth = "코트, 가죽자켓을 추천해드립니다!"
         else:
             cloth = "겨울옷(야상, 패딩, 목도리 등등 다)을 추천해드립니다!"
