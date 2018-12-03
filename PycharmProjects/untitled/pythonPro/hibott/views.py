@@ -37,7 +37,7 @@ def answer(request):
             },
             'keyboard': {
                 'type': 'buttons',
-                'buttons': ['인천']
+                'buttons': ['인천', '서울']
             }
         })
 
